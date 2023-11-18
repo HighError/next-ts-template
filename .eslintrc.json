@@ -1,3 +1,75 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    // Next.js
+    "next/core-web-vitals",
+
+    // Base
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+
+    // Extended
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:array-func/recommended",
+    "plugin:no-use-extend-native/recommended",
+    "plugin:promise/recommended",
+
+    // Security
+    "plugin:no-unsanitized/DOM",
+    "plugin:security/recommended",
+    "plugin:xss/recommended",
+
+    // Others
+    "plugin:tailwindcss/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:pii/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "no-constructor-bind",
+    "no-secrets",
+    "simple-import-sort",
+    "write-good-comments",
+    "sort-keys-fix"
+  ],
+  "root": true,
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    // no-constructor-bind plugin
+    "no-constructor-bind/no-constructor-bind": "error",
+    "no-constructor-bind/no-constructor-state": "error",
+
+    // no-secrets plugin
+    "no-secrets/no-secrets": "error",
+
+    // simple-import-sort plugin
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+
+    // write-good-comments plugin
+    "write-good-comments/write-good-comments": "warn",
+
+    //sort-keys-fix plugin
+    "sort-keys-fix/sort-keys-fix": "warn",
+
+    // The following rules are disabled due to them being considered unduly restrictive or unhelpful.
+    "unicorn/no-array-for-each": "off",
+    "unicorn/no-fn-reference-in-iterator": "off",
+    "unicorn/no-reduce": "off",
+    "unicorn/no-null": "off",
+    "unicorn/prefer-number-properties": "off",
+    "unicorn/prefer-optional-catch-binding": "off",
+    "unicorn/prevent-abbreviations": "off",
+
+    // The following rules are disabled due to clashing with other plugins
+    "array-func/prefer-array-from": "off",
+    "import/order": "off",
+    "sort-imports": "off"
+  }
 }
