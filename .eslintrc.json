@@ -1,63 +1,134 @@
 {
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true
+  },
   "extends": [
     // Next.js
     "next/core-web-vitals",
-
-    // Base
+    // Airbnb
     "airbnb",
-    "airbnb/hooks",
     "airbnb-typescript",
+    "eslint-config-airbnb/hooks",
+    // TypeScript
     "plugin:@typescript-eslint/recommended",
-
+    // React
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
     // Extended
     "plugin:sonarjs/recommended",
     "plugin:unicorn/recommended",
-    "plugin:array-func/recommended",
-    "plugin:no-use-extend-native/recommended",
-    "plugin:promise/recommended",
-
     // Security
-    "plugin:no-unsanitized/DOM",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:xss/recommended",
-
-    // Others
+    // UI and css
     "plugin:tailwindcss/recommended",
-    "plugin:eslint-comments/recommended",
-    "plugin:pii/recommended",
+    "mantine",
+    // Browser Compability
+    "plugin:compat/recommended",
+    // Others
+    "plugin:lodash/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:promise/recommended",
+    "plugin:drizzle/recommended",
+    // Prettier
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "no-constructor-bind",
-    "no-secrets",
-    "simple-import-sort",
-    "write-good-comments",
-    "sort-keys-fix"
-  ],
-  "root": true,
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module",
     "project": "./tsconfig.json"
   },
+  "plugins": [
+    "import",
+    "@typescript-eslint",
+    "no-secrets",
+    "simple-import-sort",
+    "prettier",
+    "lodash",
+    "compat",
+    "zod"
+  ],
+  "root": true,
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "."
+      },
+      "node": true
+    }
+  },
   "rules": {
-    // no-constructor-bind plugin
-    "no-constructor-bind/no-constructor-bind": "error",
-    "no-constructor-bind/no-constructor-state": "error",
-
     // no-secrets plugin
     "no-secrets/no-secrets": "error",
-
     // simple-import-sort plugin
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-
-    // write-good-comments plugin
-    "write-good-comments/write-good-comments": "warn",
-
-    //sort-keys-fix plugin
-    "sort-keys-fix/sort-keys-fix": "warn",
-
+    // Fix unicorn rules for React
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "kebabCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    // Disable no-duplicate-string rule for server error message
+    "sonarjs/no-duplicate-string": [
+      "error",
+      {
+        "ignoreStrings": "Помилка сервера"
+      }
+    ],
+    // Next.js rules for API routes
+    "import/prefer-default-export": "off",
+    // Enable support for mjs files
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "json": "always",
+        "mjs": "always"
+      }
+    ],
+    // lodash
+    "lodash/import-scope": [
+      2,
+      "member"
+    ],
+    "lodash/prefer-lodash-method": [
+      2,
+      {
+        "ignoreObjects": [
+          "router",
+          "window.location"
+        ]
+      }
+    ],
+    // zod
+    "zod/prefer-enum": 2,
+    "zod/require-strict": 2,
+    // drizzle
+    "drizzle/enforce-delete-with-where": [
+      "error",
+      {
+        "drizzleObjectName": [
+          "db"
+        ]
+      }
+    ],
     // The following rules are disabled due to them being considered unduly restrictive or unhelpful.
     "unicorn/no-array-for-each": "off",
     "unicorn/no-fn-reference-in-iterator": "off",
@@ -66,10 +137,10 @@
     "unicorn/prefer-number-properties": "off",
     "unicorn/prefer-optional-catch-binding": "off",
     "unicorn/prevent-abbreviations": "off",
-
+    "react/jsx-props-no-spreading": "off",
     // The following rules are disabled due to clashing with other plugins
-    "array-func/prefer-array-from": "off",
     "import/order": "off",
-    "sort-imports": "off"
+    "sort-imports": "off",
+    "react/require-default-props": "off"
   }
 }
