@@ -49,7 +49,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-security": "^2.1.0",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-simple-import-sort": "^11.0.0",
     "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-tailwindcss": "^3.14.1",
     "eslint-plugin-unicorn": "^51.0.0",
