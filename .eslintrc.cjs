@@ -58,9 +58,21 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
+    // No-secrets
     'no-secrets/no-secrets': 'error',
+
+    // Import sort
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+
+    // Lodash
+    'lodash/import-scope': [2, 'member'],
+    'lodash/prefer-lodash-method': [2, { ignoreObjects: ['window.location', 'router'] }],
+
+    // Conflict with Link icon
+    'jsx-a11y/anchor-is-valid': 'off',
+
+    // Remove unused imports
     '@typescript-eslint/no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
@@ -72,5 +84,11 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+
+    // Others
+    'import/prefer-default-export': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-no-bind': 'off',
   },
 };

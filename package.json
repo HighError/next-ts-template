@@ -6,8 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint --format=mo --fix",
-    "start": "next start",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "next start"
   },
   "browserslist": [
     "defaults and not dead and not op_mini all"
