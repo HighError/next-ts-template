@@ -1,5 +1,10 @@
+#!/bin/sh
+
 # Enable colors in Powershell (has scrolling issue?)
 export FORCE_COLOR=1
+
+# Fix scrolling issue
+exec >/dev/console 2>&1;
 
 # Check changed files
 pnpm lint-staged
