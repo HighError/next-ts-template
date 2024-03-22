@@ -37,10 +37,13 @@ module.exports = {
     // Regexp
     'plugin:regexp/recommended',
 
+    // Drizzle
+    'plugin:drizzle/recommended',
+
     // Others
     'plugin:jsonc/base',
   ],
-  plugins: ['lodash', 'json-format', 'no-secrets', 'simple-import-sort', 'unused-imports'],
+  plugins: ['lodash', 'json-format', 'no-secrets', 'simple-import-sort', 'unused-imports', 'zod', 'drizzle'],
   root: true,
   settings: {
     'import/resolver': {
@@ -84,6 +87,14 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+
+    // zod
+    'zod/prefer-enum': 'error',
+    'zod/require-strict': 'error',
+
+    // drizzle
+    'drizzle/enforce-update-with-where': ['error', { drizzleObjectName: 'db' }],
+    'drizzle/enforce-delete-with-where': ['error', { drizzleObjectName: 'db' }],
 
     // Others
     'import/prefer-default-export': 'off',

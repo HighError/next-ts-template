@@ -8,3 +8,6 @@ exec >/dev/console 2>&1;
 
 # Check changed files
 pnpm lint-staged
+
+# Build project
+pnpm build

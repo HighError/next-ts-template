@@ -1,3 +1,5 @@
 !.*.json
 *lock.*
 **/node_modules
+*.md
+public/sw.js

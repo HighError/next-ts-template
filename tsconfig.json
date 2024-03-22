@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext", "webworker"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "webworker"
+    ],
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
@@ -10,7 +15,6 @@
     "alwaysStrict": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
-
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -18,41 +22,47 @@
     "noUnusedParameters": true,
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
-
     "target": "ESNext",
     "sourceMap": true,
-
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "checkJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-
     "jsx": "preserve",
     "noEmit": true,
     "isolatedModules": true,
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
     "plugins": [
       {
         "name": "next"
       }
+    ],
+    "types": [
+      "@serwist/next/typings"
     ]
   },
   "include": [
     "next-env.d.ts",
+    "**/*.js",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mts",
-    "**/*.json",
+    "**/*.mjs",
     "**/*.cjs",
+    "**/*.json",
     ".next/types/**/*.ts",
+    ".lintstagedrc.cjs",
     ".eslintrc.cjs",
-    ".lintstagedrc.cjs"
   ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": [
+    "node_modules",
+    ".next",
+  ]
 }
