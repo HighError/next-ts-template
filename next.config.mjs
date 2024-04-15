@@ -1,25 +1,23 @@
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath } from "node:url";
 
-import withSerwistInit from '@serwist/next';
-import createJiti from 'jiti';
+import withSerwistInit from "@serwist/next";
+import createJiti from "jiti";
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
-jiti('./src/env');
+jiti("./src/env");
 
 const withSerwist = withSerwistInit({
-  swSrc: 'src/app/sw.ts',
-  swDest: 'public/sw.js',
+  swSrc: "src/sw.ts",
+  swDest: "public/sw.js",
+  disable: process.env.NODE_ENV !== "production",
 });
 
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  devIndicators: {
-    buildActivity: true,
-    buildActivityPosition: 'top-right',
-  },
+  reactStrictMode: true,
 };
 
 export default withSerwist(nextConfig);
