@@ -7,7 +7,7 @@ export FORCE_COLOR=1
 exec >/dev/console 2>&1;
 
 # Check changed files
-pnpm lint-staged
+bun lint-staged
 
 # Build project
-pnpm build
+bun run build
