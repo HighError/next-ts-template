@@ -26,8 +26,8 @@
     "zod": "^3.23.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.7.1",
-    "@types/bun": "1.1.0",
+    "@biomejs/biome": "1.7.2",
+    "@types/bun": "1.1.1",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
