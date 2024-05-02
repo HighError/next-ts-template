@@ -15,9 +15,6 @@
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error"
       },
-      "style": {
-        "noImplicitBoolean": "error"
-      },
       "suspicious": {
         "noConsoleLog": "warn"
       }
