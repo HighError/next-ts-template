@@ -10,6 +10,9 @@
       "complexity": {
         "useSimplifiedLogicExpression": "warn"
       },
+      "nursery": {
+        "useSortedClasses": "warn"
+      },
       "correctness": {
         "noUnusedImports": "error",
         "noUnusedPrivateClassMembers": "error",
