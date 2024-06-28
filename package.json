@@ -8,7 +8,7 @@
     "dev": "next dev",
     "prepare": "husky",
     "start": "next start",
-    "check": "biome check --apply ."
+    "check": "biome check --write ."
   },
   "browserslist": ["defaults and not dead and not op_mini all"],
   "dependencies": {
