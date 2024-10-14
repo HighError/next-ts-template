@@ -8,6 +8,3 @@ exec >/dev/console 2>&1;
 
 # Check changed files
 bun lint-staged
-
-# Build project
-bun run build

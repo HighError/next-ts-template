@@ -1,11 +1,10 @@
 import { fileURLToPath } from "node:url";
 
 import withSerwistInit from "@serwist/next";
-import createJiti from "jiti";
+import { createJiti } from "jiti";
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
-
-jiti("./src/env");
+await jiti.import("./src/env");
 
 const withSerwist = withSerwistInit({
   swSrc: "src/sw.ts",
