@@ -1,1 +1,1 @@
-# Moved to https://github.com/Eviloma/boilerplates
+# Moved to https://github.com/Eviloma/next-14-template
